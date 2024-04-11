@@ -1,0 +1,42 @@
+<style>
+  table {
+    border-collapse: collapse;
+    width: 70%; /* Adjust the width as needed */
+  }
+
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+</style>
+<h1>Let's watch some movies</h1>
+<form method = "GET">
+    Director: <input type="text"  name="director" placeholder="Enter a director name...">
+    <input type="submit" value="filter">
+</form>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Director</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each movies}}
+      <tr>
+        <td>{{this.title}}</td>
+        <td>{{this.year}}</td>
+        <td>{{this.director}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<a href="/movies/add">Add a Movie</a>
+<a href="/mymovies">My movies</a>

@@ -1,0 +1,38 @@
+
+<style>
+  table {
+    border-collapse: collapse;
+    width: 70%; /* Adjust the width as needed */
+  }
+
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+</style>
+<h1>My Movies</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Director</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each addedMovies}}
+      <tr>
+        <td>{{this.title}}</td>
+        <td>{{this.year}}</td>
+        <td>{{this.director}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+<a href="/movies/add">Add a Movie</a>
+<a href="/movies">Browse movies</a>
